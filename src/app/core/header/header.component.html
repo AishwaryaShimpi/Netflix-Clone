@@ -1,0 +1,30 @@
+<header
+  class="h-[68px] z-10 bg-gray-900 sticky top-0 flex items-center justify-between px-10 "
+>
+  <!-- Logo + navitems -->
+  <div class="flex gap-8">
+    <img
+      width="110"
+      src="https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg?w=460"
+      alt="netflix-logo"
+    />
+    <ul class="flex items-center" *ngFor="let item of navList">
+      <li
+        class="text-neutral-200 cursor-pointer text-sm font-extralight hover:text-gray-400 transition-[1s]"
+      >
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+  <!-- Welcome User | pofile Img | Singout -->
+  <div class="text-white flex items-center gap-4 font-extralight">
+    <div class="flex items-center gap-2">
+      <a class="hover:text-gray-400" href="/"
+        ><span>Welcome <strong>{{name}}</strong></span
+      ></a>
+      <img class="rounded-full" [src]="userProfileImg" width="30" alt="user-img" />
+    </div>
+    &nbsp; | &nbsp;
+    <a class="cursor-pointer hover:text-gray-400" (click)="auth.signOut()">Signout</a>
+  </div>
+</header>
